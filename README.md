@@ -1,18 +1,24 @@
-### Hi there 👋
+### **Kayaba-Attribution**
 
-<!--
-**Kayaba-Attribution/Kayaba-Attribution** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
 
-Here are some ideas to get you started:
+```
+ ⠀⠀⠀⠀⠀⠀⠀⠀ ⠀＿＿                          
+　　　　 　／＞　　フ⠀⠀⠀⠀⠀⠀⠀   ⠀⠀⠀⠀⠀⠀⠀       _________       
+　　　　　| 　_　 _ l⠀⠀⠀⠀⠀⠀⠀   ⠀⠀⠀⠀⠀⠀⠀     / ======= \  
+　 　　　／` ミ＿xノ⠀⠀⠀⠀⠀⠀⠀   ⠀⠀⠀⠀⠀⠀⠀/ __________ \    
+　　 　 /　　　 　 |⠀⠀⠀⠀⠀⠀⠀   ⠀⠀⠀⠀⠀⠀| ___________ |  
+　　　 /　 ヽ　　 ﾉ⠀⠀⠀⠀⠀⠀⠀   ⠀⠀⠀⠀⠀⠀⠀| | -       | |  
+　 　 │　　|　|　|⠀⠀⠀⠀⠀⠀⠀   ⠀⠀| |         | |  
+　／￣|　　 |　|　| ⠀⠀⠀⠀⠀⠀⠀    | |_________| |_______________________    
+　| (￣ヽ＿_ヽ_)__)⠀⠀⠀⠀⠀⠀⠀   ⠀\=____________/   Kayaba-attribution    )     
+　＼二つ ᛄᚢᚪᚾ ᚷᚩᛘᛖᛋ⠀⠀⠀⠀⠀⠀⠀   / """"""""""" \                       /  
+⠀⠀   ⠀⠀⠀⠀⠀⠀⠀  ⠀⠀   ⠀⠀/ ::::::::::::: \               { EVM } =D-'  
+⠀⠀   ⠀⠀⠀⠀⠀⠀⠀  ⠀⠀    (_________________)  
+```
 
-- 🔭 I’m currently working on ...
-- 🌱 I’m currently learning ...
-- 👯 I’m looking to collaborate on ...
-- 🤔 I’m looking for help with ...
-- 💬 Ask me about ...
-- 📫 How to reach me: ...
-- 😄 Pronouns: ...
-- ⚡ Fun fact: ...
--->
 
-[![Kayabas GitHub stats](https://github-readme-stats.vercel.app/api?username=kayaba-attribution)](https://github.com/anuraghazra/github-readme-stats)
+
+
+[![Kayaba's wakatime stats](https://github-readme-stats.vercel.app/api/wakatime?username=willianrod)](https://github.com/anuraghazra/github-readme-stats)
+
+[![Kayaba's GitHub stats](https://github-readme-stats.vercel.app/api?username=kayaba-attribution&count_private=true&show_icons=true&theme=dark)](https://github.com/anuraghazra/github-readme-stats)
