@@ -25,4 +25,5 @@
 <!--END_SECTION:waka-->
 
 
-[![Kayaba's wakatime stats](https://github-readme-stats.vercel.app/api/wakatime?username=Kayaba-Attribution)](https://github.com/anuraghazra/github-readme-stats)
+[![Kayaba's wakatime stats](https://github-readme-stats.vercel.app/api/wakatime?username=Kayaba_Attribution)](https://github.com/anuraghazra/github-readme-stats)
+
