@@ -1,5 +1,8 @@
 ### **Kayaba-Attribution**
 
+[![Twitter Follow](https://img.shields.io/twitter/follow/JuanDavidGV_KA?label=Follow)](https://twitter.com/intent/follow?screen_name=JuanDavidGV_KA)
+[![website](https://img.shields.io/badge/Website-46a2f1.svg?&style=flat-square&logo=Google-Chrome&logoColor=white&link=https://www.kayaba-attribution.dev/)](https://www.kayaba-attribution.dev/)
+
 
 ```
  ⠀⠀⠀⠀⠀⠀⠀⠀ ⠀＿＿                          
