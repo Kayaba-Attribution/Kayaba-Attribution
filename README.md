@@ -1,7 +1,21 @@
-### **Kayaba-Attribution**
+## **Kayaba-Attribution**
 
+[![Telegram](https://img.shields.io/badge/Telegram-2CA5E0?style=flat-square&logo=telegram&logoColor=white)](https://t.me/Kayaba_Attribution)
 [![Twitter Follow](https://img.shields.io/twitter/follow/JuanDavidGV_KA?label=Follow)](https://twitter.com/intent/follow?screen_name=JuanDavidGV_KA)
+![GitHub followers](https://img.shields.io/github/followers/Kayaba-Attribution?label=Follow&style=social)
 [![website](https://img.shields.io/badge/Website-46a2f1.svg?&style=flat-square&logo=Google-Chrome&logoColor=white&link=https://www.kayaba-attribution.dev/)](https://www.kayaba-attribution.dev/)
+<p>
+  <img alt="too lazy lol" src="https://img.shields.io/badge/Solidity-2F3134?style=for-the-badge&logo=solidity&logoColor=white" />
+  <img alt="JS" src="https://img.shields.io/badge/Svelte-4A4A55?style=for-the-badge&logo=svelte&logoColor=FF3E00" />
+  <img alt="JS" src="https://img.shields.io/badge/hardhat-F7DF1E?style=for-the-badge&logo=hardhat&logoColor=FF3E00" />
+  <img alt="JS" src="https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white" />
+  <img alt="JS" src="https://img.shields.io/badge/Ethereum-3C3C3D?style=for-the-badge&logo=Ethereum&logoColor=white" />
+  <img alt="Nodejs" src="https://img.shields.io/badge/Node.js-43853D?style=for-the-badge&logo=node.js&logoColor=white" />
+  <img alt="JS" src="https://img.shields.io/badge/JavaScript-323330?style=for-the-badge&logo=javascript&logoColor=F7DF1E" />
+  <img alt="JS" src="https://img.shields.io/badge/Python-14354C?style=for-the-badge&logo=python&logoColor=white" />
+  <img alt="JS" src="https://img.shields.io/badge/tailwindcss-%2338B2AC.svg?style=for-the-badge&logo=tailwind-css&logoColor=white" />
+</p>
+
 
 
 ```
