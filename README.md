@@ -16,7 +16,17 @@
   <img alt="JS" src="https://img.shields.io/badge/tailwindcss-%2338B2AC.svg?style=for-the-badge&logo=tailwind-css&logoColor=white" />
 </p>
 
+## Hey! 👋
+I'm Kay, a 19 years old CS student at Coursera and Web3 developer from Canada (🇨🇴 -> 🇨🇦).
 
+## Skills
+- 👨‍💻 Solidity, TypeScript, JavaScript
+- ⚙️ Svelte, NextJS, TailwindCSS
+- 🏗️ HardHat & Slither
+
+## Hobbies/ Projects
+- ⚡ Full-time Hackathon Participant
+- 🪨🍄 Foraging (I have a mineral-crystal-mushroom collection)
 
 ```
  ⠀⠀⠀⠀⠀⠀⠀⠀ ⠀＿＿                          
