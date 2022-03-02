@@ -17,7 +17,7 @@
 </p>
 
 ## Hey! 👋
-I'm Kay, a 18 years old CS student at Coursera and Web3 developer from Canada (🇨🇴 -> 🇨🇦).
+I'm Kay, a 19 years old CS student at Coursera and Web3 developer from Canada (🇨🇴 -> 🇨🇦).
 
 ## Skills
 - 👨‍💻 Solidity, TypeScript, JavaScript
