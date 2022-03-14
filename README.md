@@ -22,7 +22,7 @@ I'm Kay, a 19 years old CS student at Coursera and Web3 developer from Canada (�
 ## Skills
 - 👨‍💻 Solidity, TypeScript, JavaScript
 - ⚙️ Svelte, NextJS, TailwindCSS
-- 🏗️ HardHat & Slither
+- 🏗️ HardHat & Forge
 
 ## Hobbies/ Projects
 - ⚡ Full-time Hackathon Participant
