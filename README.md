@@ -29,6 +29,7 @@ I'm Kay, a 19 years old CS student at Coursera and Web3 developer from Canada (�
 - 🪨🍄 Foraging (I have a mineral-crystal-mushroom collection)
 - Interested in Dynamic NFTs, AMMs, Lending Protocols and DeFi in General
 - Love to do CTFs currently finishing DamnVulnerableDeFi V2
+- SvelteKit Maxi
 
 ```
  ⠀⠀⠀⠀⠀⠀⠀⠀ ⠀＿＿                          
