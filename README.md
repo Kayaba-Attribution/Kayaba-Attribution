@@ -48,7 +48,7 @@ I'm Kayaba, a 19 years old CS student at UoL and Web3 developer from Canada (�
 ```
 
 
-| ᚹᛖᛖᚳᛚᛁ ᛋᛏᚪᛏᛋ | ᛘᛁ ᛚᚪᛝᚢᚪᚷᛖᛋ     | ᛘᛁ ᛋᛏᚪᛏᛋ |
+| ᚹᛖᛖᚳᛚᛁ ᛋᛏᚪᛏᛋ | Most Used     | Week Coding Time |
 |    :----:   |          :---: | :---: |
 | [![Kayaba's GitHub stats](https://github-readme-stats.vercel.app/api?username=kayaba-attribution&count_private=true&show_icons=true&theme=dark)](https://github.com/anuraghazra/github-readme-stats)       | [![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=Kayaba-Attribution&layout=compact)](https://github.com/anuraghazra/github-readme-stats)   | [![Kayaba's wakatime stats](https://github-readme-stats.vercel.app/api/wakatime?username=Kayaba_Attribution)](https://github.com/anuraghazra/github-readme-stats) |
 
