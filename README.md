@@ -26,11 +26,11 @@ I'm Kayaba, a 19 years old CS student at UoL and Web3 developer from Canada (�
 
 ## Hobbies/ Projects
 - ⚡ Full-time Hackathon Participant
+- 🛡 Part-time Security Auditor at [KISHIELD](https://www.kishield.com/)
 - 🪨🍄 Foraging (I have a mineral-crystal-mushroom collection)
 - Interested in Dynamic NFTs, AMMs, Lending Protocols and DeFi in General
 - Love to do CTFs currently finishing DamnVulnerableDeFi V2
 - SvelteKit Maxi
-- Part time at ![KISHIELD](https://www.kishield.com/)
 
 ```
  ⠀⠀⠀⠀⠀⠀⠀⠀ ⠀＿＿                          
