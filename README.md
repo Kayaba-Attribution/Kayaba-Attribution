@@ -26,8 +26,8 @@ I'm Kayaba, a 19 years old CS student at UoL and Web3 developer from Canada (�
 
 ## Hobbies/ Projects
 - ⚡ Full-time Hackathon Participant
-- Part-time Junior Smart Contract Security Auditor at [KIHSIELD](https://www.kishield.com/)
-- Part-time Smart Contract & Protocol Design at [KIHSIELD](https://www.kishield.com/)
+- Part-time Junior Smart Contract Security Auditor at [KISHIELD](https://www.kishield.com/)
+- Part-time Smart Contract & Protocol Design at [KISHIELD](https://www.kishield.com/)
 - 📝 Occasional Writer at my [blog](https://www.kayaba-attribution.dev/)
 - 🪨🍄 Foraging (I have a mineral-crystal-mushroom collection)
 - Interested in Dynamic NFTs, AMMs, Lending Protocols and DeFi in General
