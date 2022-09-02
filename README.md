@@ -17,7 +17,7 @@
 </p>
 
 ## Hey! 👋
-I'm Kayaba, a 19 years old CS student at UoL and Web3 developer from Canada (🇨🇴 -> 🇨🇦).
+I'm Kayaba, a 20 years old CS student at UoL and Web3 developer from Canada (🇨🇴 -> 🇨🇦).
 
 ## Skills
 - 👨‍💻 Solidity, TypeScript, JavaScript
