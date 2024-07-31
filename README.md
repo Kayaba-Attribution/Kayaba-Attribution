@@ -17,7 +17,7 @@
 </p>
 
 ## Hey! 👋
-I'm Kayaba, a 21 years old CS student at UoL and Web3 developer from Canada (🇨🇴 -> 🇨🇦).
+I'm Juan Gomez, a 22 years old CS graduate from UoL and software developer from Canada (🇨🇴 -> 🇨🇦).
 
 ## Skills
 - 👨‍💻 Solidity, TypeScript, JavaScript
