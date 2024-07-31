@@ -20,30 +20,30 @@ Hey! 👋
 I'm Juan Gomez, a 22-year-old CS graduate from UoL, specializing in Machine Learning and AI. I'm a software developer based in Canada (🇨🇴 -> 🇨🇦).
 Skills
 
-👨‍💻 Python, JavaScript, TypeScript, Solidity
-🧠 Machine Learning, AI, NLP, Computer Vision, LLM, RAG
-⚙️ React, NextJS, SvelteKit, TailwindCSS, HTML, CSS
-🛠️ TensorFlow, PyTorch, Keras
-☁️ Azure, AWS, Docker
-🏗️ MongoDB, MySQL
+- 👨‍💻 Python, JavaScript, TypeScript, Solidity
+- 🧠 Machine Learning, AI, NLP, Computer Vision, LLM, RAG
+- ⚙️ React, NextJS, SvelteKit, TailwindCSS, HTML, CSS
+- 🛠️ TensorFlow, PyTorch, Keras
+- ☁️ Azure, AWS, Docker
+- 🏗️ MongoDB, MySQL
 
 Experience & Projects
 
-🥇 1st Place winner at Western University AI Flagship Hackathon 2024
-🤖 Blockchain Monitoring Bot Developer at Forta Foundation
-💼 Full Stack & Blockchain Developer at Kishield Software Inc
-🏥 Researcher in AI-enhanced Chest X-Ray Analysis
-📊 Amazon Reviews Sentiment Analysis using NLP
-🖐️ Hand Gesture Recognition Model for ASL
+- 🥇 1st Place winner at Western University AI Flagship Hackathon 2024
+- 🤖 Blockchain Monitoring Bot Developer at Forta Foundation
+- 💼 Full Stack & Blockchain Developer at Kishield Software Inc
+- 🏥 Researcher in AI-enhanced Chest X-Ray Analysis
+- 📊 Amazon Reviews Sentiment Analysis using NLP
+- 🖐️ Hand Gesture Recognition Model for ASL
 
 Interests
 
 ⚡ Full-time Hackathon Enthusiast
-🔒 Passionate about Blockchain Security and DeFi
-📝 Occasional Writer at my blog
-🪨🍄 Avid Mineral and Rock Collector
-🌐 Exploring the intersections of AI, ML, and Blockchain
-🏋️ Sports and Fitness Enthusiast
+- 🔒 Passionate about Blockchain Security and DeFi
+- 📝 Occasional Writer at my blog
+- 🪨🍄 Avid Mineral and Rock Collector
+- 🌐 Exploring the intersections of AI, ML, and Blockchain
+- 🏋️ Sports and Fitness Enthusiast
 
 ```
  ⠀⠀⠀⠀⠀⠀⠀⠀ ⠀＿＿                          
