@@ -125,9 +125,10 @@ I build **agentic AI systems**, **high-throughput pipelines**, and **early-stage
 ```
 
 
-| ᚹᛖᛖᚳᛚᛁ ᛋᛏᚪᛏᛋ | Most Used | Coding Time |
-|    :----:   |   :---:   | :---: |
-| [![Kayaba's GitHub stats](https://github-readme-stats.vercel.app/api?username=kayaba-attribution&count_private=true&show_icons=true&theme=dark&show=prs_merged,prs_merged_percentage&include_all_commits=true)](https://github.com/anuraghazra/github-readme-stats) | [![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=Kayaba-Attribution&layout=compact)](https://github.com/anuraghazra/github-readme-stats) | [![Kayaba's wakatime stats](https://github-readme-stats.vercel.app/api/wakatime?username=Kayaba_Attribution&layout=compact)](https://github.com/anuraghazra/github-readme-stats) |
+| ᚹᛖᛖᚳᛚᛁ ᛋᛏᚪᛏᛋ | Most Used     | Coding Time |
+|    :----:   |     :---:     |   :---:   |
+| [![Kayaba's GitHub stats](https://github-readme-stats.vercel.app/api?username=kayaba-attribution&count_private=true&show_icons=true&theme=dark&show=prs_merged,prs_merged_percentage&include_all_commits=true)](https://github.com/anuraghazra/github-readme-stats) | [![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=Kayaba-Attribution&layout=compact)](https://github.com/anuraghazra/github-readme-stats) | [![Kayaba's wakatime stats](https://github-readme-stats.vercel.app/api/wakatime?username=Kayaba_Attribution&layout=compact&range=last_7_days)](https://github.com/anuraghazra/github-readme-stats) |
+
 
 
 
