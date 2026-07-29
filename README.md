@@ -1,138 +1,86 @@
-readme = """
-# **Kayaba-Attribution**
+# Juan David Gomez
 
-[![Telegram](https://img.shields.io/badge/Telegram-2CA5E0?style=flat-square&logo=telegram&logoColor=white)](https://t.me/Kayaba_Attribution)
-[![Twitter Follow](https://img.shields.io/twitter/follow/JuanDavidGV_KA?label=Follow)](https://twitter.com/intent/follow?screen_name=JuanDavidGV_KA)
-![GitHub followers](https://img.shields.io/github/followers/Kayaba-Attribution?label=Follow&style=social)
-[![website](https://img.shields.io/badge/Website-46a2f1.svg?&style=flat-square&logo=Google-Chrome&logoColor=white)](https://www.kayaba-attribution.dev/)
+**I build agentic dev tooling, and I verify what agents claim.**
 
-<p>
-  <img alt="Solidity" src="https://img.shields.io/badge/Solidity-2F3134?style=for-the-badge&logo=solidity&logoColor=white" />
-  <img alt="Svelte" src="https://img.shields.io/badge/Svelte-4A4A55?style=for-the-badge&logo=svelte&logoColor=FF3E00" />
-  <img alt="Hardhat" src="https://img.shields.io/badge/hardhat-F7DF1E?style=for-the-badge&logo=hardhat&logoColor=FF3E00" />
-  <img alt="TypeScript" src="https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white" />
-  <img alt="Ethereum" src="https://img.shields.io/badge/Ethereum-3C3C3D?style=for-the-badge&logo=Ethereum&logoColor=white" />
-  <img alt="Nodejs" src="https://img.shields.io/badge/Node.js-43853D?style=for-the-badge&logo=node.js&logoColor=white" />
-  <img alt="JavaScript" src="https://img.shields.io/badge/JavaScript-323330?style=for-the-badge&logo=javascript&logoColor=F7DF1E" />
-  <img alt="Python" src="https://img.shields.io/badge/Python-14354C?style=for-the-badge&logo=python&logoColor=white" />
-  <img alt="Tailwind" src="https://img.shields.io/badge/tailwindcss-%2338B2AC.svg?style=for-the-badge&logo=tailwind-css&logoColor=white" />
-</p>
+Production AI systems at scale during the day — [Postilize](https://www.postilize.com), where I
+was one of the first eight engineers. In the open: MCP tooling, Claude Code plugins, and upstream
+fixes to the agent stack.
+
+The through-line is verification. A cheap model hands you a wrong answer in a confident sentence.
+A migration codemod leaves a green test suite sitting on top of a dead code path. A monkey-patch
+bound to a package instead of a module silently stops working and nothing fails. Those are the
+bugs I go looking for, because they are the ones that survive CI.
 
 ---
 
-# **Hey! 👋 I'm Juan Gomez**
+## Tools
 
-**23 y/o Senior Software Engineer @ Postilize — one of the first 8 engineers.  
-Architect of our Agentic AI systems, Signals V2 pipeline, and high-scale async infrastructure.**
+**[claude-cheap-agents](https://github.com/Kayaba-Attribution/claude-cheap-agents)** ·
+Claude Code plugin, MIT
 
-I build **agentic AI systems**, **high-throughput pipelines**, and **early-stage architectures** that move companies from prototype → production → PMF.
+Delegate bulk work to cheap OpenRouter models (DeepSeek, Qwen) through the OpenCode CLI, then
+verify the answer by re-running the command the agent says it used. Trust is a verdict, not a vibe.
 
----
+Ships with the failure modes measured rather than assumed: `opencode run` hangs forever on an
+inherited open stdin pipe (3s with stdin closed, still hanging at 6m40s without), parallel runs
+race a schema migration on a shared SQLite session db, hybrid models default reasoning **on** at
+68s/$0.0164 against 38s/$0.0095 for an identical answer, and a cheap agent will report a confident
+"no matches" after `rg` returned `command not found`.
 
-# 🚀 **Professional Snapshot**
+**[claude-code-skill-help](https://github.com/Kayaba-Attribution/claude-code-skill-help)** ·
+Claude Code plugin, MIT
 
-### **Senior Software Engineer @ Postilize (Core Engineering, Early Team)**
-**Mar 2025 – Present · Toronto / Remote**
+See the real usage, flags and arguments of any Claude Code skill, slash command or plugin. The
+slash menu truncates a skill's description to one line and there is no `claude skill details`, so
+you end up `cat`-ing `SKILL.md` files to remember whether a command takes arguments.
 
-- **Architected Signals V2**:  
-  Cut OpenAI spend **~90%** (~$100K/yr saved), scaled throughput **70K → 280K articles/day**, expanded region coverage **1 → 4**, and reduced per-company cost drastically.
-
-- **Shipped leadership-level analytics**:  
-  Delivered time-series trends, AI vs non-AI segmentation, creator insights, & range presets turning raw news logs → actionable ROI dashboards.
-
-- **Designed the new Engage modal**:  
-  Outlook-like flow with **on-the-fly AI drafts** + **one-click send**, making Signals a daily workflow for analysts, associates, and partners.
-
-- **Launched Smart Outreach**:  
-  Auto-prioritized C-level/legal decision-makers (via RocketReach + internal graph) and generated personalized drafts directly from a signal.
-
-- **Enabled delegated outreach**:  
-  Analysts queue messages for partners/execs with full auth + role-aware controls → unlocking scalable, hierarchy-aware communication.
-
-- **Built job-change signal class**:  
-  Activated CEO, CFO, Corp Dev triggers as a new high-value category inside Signals.
+Handles what a naive lookup misses: the two file layouts a command can live in (one plugin reports
+11 skills where only 3 exist as `SKILL.md`), the two plugin locations where only the version-pinned
+one is authoritative, and the zsh glob that aborts the whole command instead of expanding to nothing.
 
 ---
 
-### **Software Engineer @ Postilize (Agentic AI Platform)**
-**Nov 2024 – Mar 2025**
+## Upstream
 
-- Built Postilize’s **agentic outreach platform** from prototype → core production system.  
-- Implemented **FastAPI + Celery + Redis** async infra for high-volume email generation.  
-- Created **Deep Research**, personalized benefits, and "Keep In Touch" AI agents.  
-- Developed the **Deep Research tab**—a transparent reasoning system and demo highlight.  
-- Cut LinkedIn automation times by **79–85%**, boosting throughput massively.
+Migrating the open-source MCP ecosystem to protocol revision `2026-07-28`.
 
----
+| Contribution | What it was |
+|---|---|
+| [oraios/serena#1777](https://github.com/oraios/serena/pull/1777) | `mcp` 1.28.1 → 2.0.0. Caught two silent regressions no test could: an inert `Settings` assignment that killed every `FASTMCP_*` env var, and a monkey-patch bound to a package instead of a module. Both were green. |
+| [makenotion/notion-mcp-server#339](https://github.com/makenotion/notion-mcp-server/pull/339) | Migration to the split SDK v2 packages. 27-line diff, full CI green. |
+| [punkpeye/fastmcp#300](https://github.com/punkpeye/fastmcp/issues/300) | Measured the migration instead of guessing at it (codemod: 86 changes, 442/448 tests passing) and isolated the two public-API decisions that actually block it. |
+| [sooperset/mcp-atlassian#1541](https://github.com/sooperset/mcp-atlassian/issues/1541) | Dependency blocker, the exact method port required, and a failing GHSA-3r68 regression test on the dispatch path. |
 
-### **Forta Foundation — Blockchain Security**
-**Feb 2023 – Jun 2024**
-
-- Designed high-performance data analysis pipelines for large-scale on-chain streams.  
-- Built standalone **fraud/exploit detectors** parsing raw blockchain data in real time.  
-- Balanced **800K–1.2M datapoints/day** with adaptive algorithms ensuring zero loss.  
-- Containerized **8+ ML-driven alerting models** for low-latency distributed monitoring.
+A finding worth repeating from that work: **nothing forces a migration to the new revision.** The
+SDK speaks the 2025-era protocol unless a server explicitly opts in, and the spec carries a
+twelve-month deprecation window. Most of the coverage said otherwise.
 
 ---
 
-# 🧠 **Core Expertise**
+## Production
 
-- **Agentic & Generative AI Systems**  
-- **Scalable Async Architecture** (FastAPI, Celery, Redis, queues)  
-- **Data Pipelines & High-Volume Processing**  
-- **Product-Market Fit Acceleration**  
-- **Blockchain Security & On-chain Analytics**  
-- **Full-stack Engineering across AI + Web**
+**Postilize** — Senior Software Engineer, one of the first eight engineers · Mar 2025 – present
 
-> I help teams ship faster, scale earlier, and turn AI capability into real customer value.
+Architect of the Signals pipeline: agentic prospecting over a multi-region news corpus, async
+infrastructure on FastAPI, Celery and Redis, and the LLM cost and throughput work underneath it.
+Also built the Signals MCP server and the outreach surfaces analysts use daily. Earlier, took the
+agentic outreach platform from prototype to production.
 
----
+<!-- Add back any scale/cost figures you can defend precisely, including the baseline and what else
+     changed at the same time. Numbers that wobble under questioning cost more than they earn. -->
 
-# 📚 **Education**
+**Forta Foundation** — Blockchain security · 2023 – 2024
 
-**BSc Computer Science — Goldsmiths, University of London**  
-*First Class Honours (2020–2024)*
+Real-time fraud and exploit detectors over 800K–1.2M datapoints/day, containerized as distributed
+alerting models. Adversarial pattern-matching at volume, which is where the verification habit
+came from.
 
----
-
-# 🪨 **Interests**
-
-- ⚡ Hackathons & rapid prototyping  
-- 🔒 Blockchain security & DeFi  
-- 📝 Writer (AI + engineering topics)  
-- 🪨 Mineral & rock collector  
-- 💪 Gym, fitness, all things performance  
-- 🌐 Building at the intersection of AI × ML × Blockchain  
+**BSc Computer Science**, Goldsmiths, University of London — First Class Honours
 
 ---
 
-# 🌙 **Aesthetic Corner**
+## Elsewhere
 
-
-```
- ⠀⠀⠀⠀⠀⠀⠀⠀ ⠀＿＿                          
-　　　　 　／＞　　フ⠀⠀⠀⠀⠀⠀⠀   ⠀⠀⠀⠀⠀⠀⠀       _________       
-　　　　　| 　_　 _ l⠀⠀⠀⠀⠀⠀⠀   ⠀⠀⠀⠀⠀⠀⠀     / ======= \  
-　 　　　／` ミ＿xノ⠀⠀⠀⠀⠀⠀⠀   ⠀⠀⠀⠀⠀⠀⠀/ __________ \    
-　　 　 /　　　 　 |⠀⠀⠀⠀⠀⠀⠀   ⠀⠀⠀⠀⠀⠀| ___________ |  
-　　　 /　 ヽ　　 ﾉ⠀⠀⠀⠀⠀⠀⠀   ⠀⠀⠀⠀⠀⠀⠀| | -       | |  
-　 　 │　　|　|　|⠀⠀⠀⠀⠀⠀⠀   ⠀⠀| |         | |  
-　／￣|　　 |　|　| ⠀⠀⠀⠀⠀⠀⠀    | |_________| |_______________________    
-　| (￣ヽ＿_ヽ_)__)⠀⠀⠀⠀⠀⠀⠀   ⠀\=____________/   Kayaba-attribution   )     
-　＼二つ ᛄᚢᚪᚾ ᚷᚩᛘᛖᛋ⠀⠀⠀⠀⠀⠀⠀   / """"""""""" \                        /  
-⠀⠀   ⠀⠀⠀⠀⠀⠀⠀  ⠀⠀   ⠀⠀/ ::::::::::::: \               { EVM } =D-'  
-⠀⠀   ⠀⠀⠀⠀⠀⠀⠀  ⠀⠀    (_________________)  
-```
-
-
-| ᚹᛖᛖᚳᛚᛁ ᛋᛏᚪᛏᛋ | Most Used     | Coding Time |
-|    :----:   |     :---:     |   :---:   |
-| [![Kayaba's GitHub stats](https://github-readme-stats.vercel.app/api?username=kayaba-attribution&count_private=true&show_icons=true&theme=dark&show=prs_merged,prs_merged_percentage&include_all_commits=true)](https://github.com/anuraghazra/github-readme-stats) | [![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=Kayaba-Attribution&layout=compact)](https://github.com/anuraghazra/github-readme-stats) | [![Kayaba's wakatime stats](https://github-readme-stats.vercel.app/api/wakatime?username=Kayaba_Attribution&layout=compact&range=last_7_days)](https://github.com/anuraghazra/github-readme-stats) |
-
-
-
-
-<!--START_SECTION:waka-->
-<!--END_SECTION:waka-->
-
-
+[kayaba-attribution.dev](https://www.kayaba-attribution.dev/) ·
+[Twitter](https://twitter.com/JuanDavidGV_KA) ·
+[Telegram](https://t.me/Kayaba_Attribution)
