@@ -69,7 +69,7 @@ def card(s):
     o = [f'<svg xmlns="http://www.w3.org/2000/svg" width="{W}" height="{H}" viewBox="0 0 {W} {H}" role="img" '
          f'aria-label="Rolling {DAYS}-day work stats: {d["add"]:,} lines added, {d["prs"]} PRs merged, {d["reviews"]} PRs reviewed">',
          f'<style>text{{{mono};white-space:pre}}.k{{fill:#8b949e;font-size:14px}}.n{{font-size:30px;font-weight:700}}'
-         '.f{animation:in .6s ease-out both}@keyframes in{from{opacity:0;transform:translateY(6px)}to{opacity:1}}</style>',
+         '</style>',
          f'<rect width="{W}" height="{H}" rx="10" fill="#0d1117" stroke="#30363d"/>',
          f'<text x="24" y="34" style="font-size:14px"><tspan fill="#3fb950">juan@prod</tspan><tspan fill="#6e7681">:</tspan>'
          f'<tspan fill="#58a6ff">~</tspan><tspan fill="#6e7681">$ </tspan><tspan fill="#e6edf3">devstats --me --days {DAYS}</tspan></text>',
@@ -84,7 +84,11 @@ def card(s):
     ]
     for i, (n, k, c) in enumerate(cells):
         x, y = 24 + (i % 3) * 262, 88 + (i // 3) * 70
-        o.append(f'<g class="f" style="animation-delay:{0.15 * i:.2f}s"><text x="{x}" y="{y}" class="n" fill="{c}">{escape(n)}</text>'
+        # SMIL fade that starts at 0s: where animation is off, the base opacity (1) shows
+        start, dur = 0.15 * i, 0.15 * i + 0.6
+        fade = (f'<animate attributeName="opacity" values="0;0;1" keyTimes="0;{start / dur:.3f};1" '
+                f'dur="{dur:.2f}s" fill="freeze"/>')
+        o.append(f'<g>{fade}<text x="{x}" y="{y}" class="n" fill="{c}">{escape(n)}</text>'
                  f'<text x="{x}" y="{y + 22}" class="k">{escape(k)}</text></g>')
     # where the lines went: the five shares sum to 100
     mix = [('source', d['src'], '#58a6ff'), ('migrations', d['migr'], '#d2a8ff'), ('tests', d['test'], '#3fb950'),
@@ -125,7 +129,7 @@ def main():
         print('no change')
         return
     git('commit', '-m', f'stats: {stats["updated"]}')
-    git('pull', '--rebase', '-q')  # the nightly Action commits here too
+    git('pull', '--rebase', '--autostash', '-q')  # the nightly Action commits here too
     git('push', '-q')
     print('pushed')
 
