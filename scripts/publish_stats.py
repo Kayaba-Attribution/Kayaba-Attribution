@@ -103,7 +103,8 @@ def card(s):
         if w <= 0:
             continue
         o.append(f'<rect x="{x:.1f}" y="{by}" width="{w:.1f}" height="{bh}" fill="{c}">'
-                 f'<animate attributeName="width" from="0" to="{w:.1f}" dur="0.8s" begin="{0.9 + 0.2 * i:.1f}s" fill="freeze"/></rect>')
+                 f'<animate attributeName="width" values="0;0;{w:.1f}" keyTimes="0;{(0.9 + 0.2 * i) / (1.7 + 0.2 * i):.3f};1" '
+                 f'dur="{1.7 + 0.2 * i:.1f}s" fill="freeze"/></rect>')
         x += w
     lx = bx
     for label, p, c in mix:
