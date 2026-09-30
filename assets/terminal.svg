@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="820" height="435" viewBox="0 0 820 435" role="img" aria-label="Terminal: signals pipeline funnel and a Jev decision">
+<defs>
+<linearGradient id="g" x1="0" x2="1" spreadMethod="reflect"><stop offset="0" stop-color="#3fb950"/><stop offset="0.5" stop-color="#58a6ff"/><stop offset="1" stop-color="#bc8cff"/><animateTransform attributeName="gradientTransform" type="translate" values="-1 0;1 0;-1 0" dur="8s" repeatCount="indefinite"/></linearGradient>
+</defs>
+<style>text{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,"Liberation Mono",monospace;font-size:14px;white-space:pre}.b{font-size:14px;fill:url(#g)}</style>
+<rect width="820" height="435" rx="10" fill="#0d1117" stroke="#30363d"/>
+<circle cx="22" cy="20" r="6" fill="#ff5f56"/><circle cx="42" cy="20" r="6" fill="#ffbd2e"/><circle cx="62" cy="20" r="6" fill="#27c93f"/>
+<text x="410.0" y="25" text-anchor="middle" fill="#6e7681" style="font-size:12px">kayaba-attribution — zsh</text>
+<text class="b" x="24" y="62" textLength="413.1" lengthAdjust="spacingAndGlyphs">██╗  ██╗ █████╗ ██╗   ██╗ █████╗ ██████╗  █████╗ </text>
+<text class="b" x="24" y="78" textLength="413.1" lengthAdjust="spacingAndGlyphs">██║ ██╔╝██╔══██╗╚██╗ ██╔╝██╔══██╗██╔══██╗██╔══██╗</text>
+<text class="b" x="24" y="94" textLength="413.1" lengthAdjust="spacingAndGlyphs">█████╔╝ ███████║ ╚████╔╝ ███████║██████╔╝███████║</text>
+<text class="b" x="24" y="110" textLength="413.1" lengthAdjust="spacingAndGlyphs">██╔═██╗ ██╔══██║  ╚██╔╝  ██╔══██║██╔══██╗██╔══██║</text>
+<text class="b" x="24" y="126" textLength="413.1" lengthAdjust="spacingAndGlyphs">██║  ██╗██║  ██║   ██║   ██║  ██║██████╔╝██║  ██║</text>
+<text class="b" x="24" y="142" textLength="413.1" lengthAdjust="spacingAndGlyphs">╚═╝  ╚═╝╚═╝  ╚═╝   ╚═╝   ╚═╝  ╚═╝╚═════╝ ╚═╝  ╚═╝</text>
+<clipPath id="c0"><rect x="22" y="172" height="21" width="0"><animate attributeName="width" dur="12.55s" repeatCount="indefinite" values="0;0;109.6;458.8;458.8" keyTimes="0;0.0478;0.0486;0.1753;1" calcMode="linear"/></rect></clipPath>
+<g clip-path="url(#c0)">
+<text x="24" y="188"><tspan fill="#3fb950">juan@prod</tspan><tspan fill="#6e7681">:</tspan><tspan fill="#58a6ff">~</tspan><tspan fill="#6e7681">$ </tspan><tspan fill="#e6edf3">signals run --env prod --date 2026-09-29</tspan></text>
+</g>
+<clipPath id="c1"><rect x="22" y="193" height="21" width="0"><animate attributeName="width" dur="12.55s" repeatCount="indefinite" values="0;0;408.2;408.2" keyTimes="0;0.2072;0.2112;1" calcMode="linear"/></rect></clipPath>
+<g clip-path="url(#c1)">
+<text x="24" y="209" fill="#8b949e">  22,654 companies searched · 1,304,965 results</text>
+</g>
+<clipPath id="c2"><rect x="22" y="214" height="21" width="0"><animate attributeName="width" dur="12.55s" repeatCount="indefinite" values="0;0;214.3;214.3" keyTimes="0;0.2311;0.2351;1" calcMode="linear"/></rect></clipPath>
+<g clip-path="url(#c2)">
+<text x="24" y="230" fill="#8b949e">  → prefilter    952,178</text>
+</g>
+<clipPath id="c3"><rect x="22" y="235" height="21" width="0"><animate attributeName="width" dur="12.55s" repeatCount="indefinite" values="0;0;214.3;214.3" keyTimes="0;0.2470;0.2510;1" calcMode="linear"/></rect></clipPath>
+<g clip-path="url(#c3)">
+<text x="24" y="251" fill="#8b949e">  → classified    20,017</text>
+</g>
+<clipPath id="c4"><rect x="22" y="256" height="21" width="0"><animate attributeName="width" dur="12.55s" repeatCount="indefinite" values="0;0;214.3;214.3" keyTimes="0;0.2629;0.2669;1" calcMode="linear"/></rect></clipPath>
+<g clip-path="url(#c4)">
+<text x="24" y="272" fill="#8b949e">  → validated     16,579</text>
+</g>
+<clipPath id="c5"><rect x="22" y="277" height="21" width="0"><animate attributeName="width" dur="12.55s" repeatCount="indefinite" values="0;0;281.8;281.8" keyTimes="0;0.2789;0.2829;1" calcMode="linear"/></rect></clipPath>
+<g clip-path="url(#c5)">
+<text x="24" y="293" fill="#3fb950">  ✓ emitted       14,255 signals</text>
+</g>
+<clipPath id="c6"><rect x="22" y="298" height="21" width="0"><animate attributeName="width" dur="12.55s" repeatCount="indefinite" values="0;0;109.6;484.1;484.1" keyTimes="0;0.3546;0.3554;0.4900;1" calcMode="linear"/></rect></clipPath>
+<g clip-path="url(#c6)">
+<text x="24" y="314"><tspan fill="#3fb950">juan@prod</tspan><tspan fill="#6e7681">:</tspan><tspan fill="#58a6ff">~</tspan><tspan fill="#6e7681">$ </tspan><tspan fill="#e6edf3">jev ask "does acme.io belong to Acme Corp?"</tspan></text>
+</g>
+<clipPath id="c7"><rect x="22" y="319" height="21" width="0"><animate attributeName="width" dur="12.55s" repeatCount="indefinite" values="0;0;433.5;433.5" keyTimes="0;0.5299;0.5339;1" calcMode="linear"/></rect></clipPath>
+<g clip-path="url(#c7)">
+<text x="24" y="335" fill="#d29922">  → insufficient_evidence   refusing, not guessing</text>
+</g>
+<clipPath id="c8"><rect x="22" y="340" height="21" width="0"><animate attributeName="width" dur="12.55s" repeatCount="indefinite" values="0;0;109.6;172.2;172.2" keyTimes="0;0.6056;0.6064;0.6454;1" calcMode="linear"/></rect></clipPath>
+<g clip-path="url(#c8)">
+<text x="24" y="356"><tspan fill="#3fb950">juan@prod</tspan><tspan fill="#6e7681">:</tspan><tspan fill="#58a6ff">~</tspan><tspan fill="#6e7681">$ </tspan><tspan fill="#e6edf3">whoami</tspan></text>
+</g>
+<clipPath id="c9"><rect x="22" y="361" height="21" width="0"><animate attributeName="width" dur="12.55s" repeatCount="indefinite" values="0;0;416.6;416.6" keyTimes="0;0.6693;0.6733;1" calcMode="linear"/></rect></clipPath>
+<g clip-path="url(#c9)">
+<text x="24" y="377" fill="#8b949e">  idea → enterprise product. owns it end to end.</text>
+</g>
+<g opacity="0"><animate attributeName="opacity" dur="12.55s" repeatCount="indefinite" values="0;1;1" keyTimes="0;0.6972;1" calcMode="discrete"/>
+<text x="24" y="398"><tspan fill="#3fb950">juan@prod</tspan><tspan fill="#6e7681">:</tspan><tspan fill="#58a6ff">~</tspan><tspan fill="#6e7681">$ </tspan></text>
+<rect x="133.6" y="385" width="8" height="16" fill="#e6edf3"><animate attributeName="opacity" values="1;0;1" dur="1s" calcMode="discrete" repeatCount="indefinite"/></rect>
+</g>
+</svg>

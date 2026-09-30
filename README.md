@@ -2,12 +2,16 @@
 
 **I build agentic dev tooling, and I verify what agents claim.**
 
-Production AI systems at scale during the day — [Postilize](https://www.postilize.com), where I
+<p align="center">
+  <img src="assets/terminal.svg" alt="Animated terminal: a production signals run narrowing 1.3M search results to 14,255 signals, then a Jev decision refusing to guess" width="820">
+</p>
+
+**Production AI systems at scale** during the day — [Postilize](https://www.postilize.com), where I
 was one of the first eight engineers. In the open: MCP tooling, Claude Code plugins, and upstream
 fixes to the agent stack.
 
-I take a rough idea to a product people depend on, and I own it end to end: the architecture, the
-code, the rollout, and the person using it on Monday morning. Nobody has to hand me a spec.
+I take **a rough idea to a product people depend on**, and I **own it end to end**: the architecture, the
+code, the rollout, and the person using it on Monday morning. **Nobody has to hand me a spec.**
 
 The through-line is verification. A cheap model hands you a wrong answer in a confident sentence.
 A migration codemod leaves a green test suite sitting on top of a dead code path. A monkey-patch
@@ -21,19 +25,19 @@ bugs I go looking for, because they are the ones that survive CI.
 **Postilize** — Senior Software Engineer, one of the first eight engineers · Nov 2024 – present
 
 AI for large US law firms: business-development signals, relationship data and CRM quality.
-~400 merged PRs across five services in under two years.
+**~400 merged PRs** across five services in under two years.
 
 - **Signals pipeline, idea to enterprise product.** Architect and owner of agentic prospecting over
   a multi-region news corpus: search, LLM classification and enrichment, dedup, delivery to
-  lawyers. The V2 rebuild on FastAPI, Celery and Redis took it from 1 to 4 regions while cutting
-  LLM cost by about 90%. Today the main production run searches ~22,600 companies a day and
-  narrows ~1.3M search results to 5K–14K signals. Then I built the Signals MCP
+  lawyers. The V2 rebuild on FastAPI, Celery and Redis took it from **1 to 4 regions** while cutting
+  **LLM cost by about 90%**. Today the main production run searches **~22,600 companies a day** and
+  narrows **~1.3M search results to 5K–14K signals**. Then I built the Signals MCP
   server on top.
 - **Typed AI decisions in production.** Put [Jev](https://typesafe.ai) decision gates into company
   identity resolution: one narrow factual question per call, neutral candidate labels, evidence
   fetched before judging, and an explicit "insufficient evidence" answer. The audit that started
   it found about half the early decisions were low-confidence fallbacks cached as truth. The gate
-  now refuses instead of guessing.
+  now **refuses instead of guessing**.
 - **LLM-as-judge with a human in the loop.** An AI judge reviews suggested CRM changes in shadow
   mode, with a review workbench and per-tenant rollout flags, before anything is auto-suppressed.
 - **Identity and data quality at scale.** Guards that stop email signatures, enrichment providers
@@ -53,8 +57,8 @@ possible on Cloudflare Workers.
   queried in plain language, plus a 7am daily brief for the owner: arrivals, balances to chase, and a
   14-day occupancy outlook with raise-or-promote calls.
 - **Pricing data from scratch.** Daily rate and booking rails running unattended, a 3-year pricing
-  log backfilled (10,202 price changes), and a replay harness over 131K pricing decisions that
-  reproduces the current revenue manager exactly: the baseline any new pricing policy must beat.
+  log backfilled (**10,202 price changes**), and a replay harness over **131K pricing decisions** that
+  **reproduces the current revenue manager exactly**: the baseline any new pricing policy must beat.
 - **Menu from real demand.** 20 months of POS data (4,780 bills) showed the best sellers were
   missing from the printed menu. That analysis shaped the new menu and its pricing.
 - Also shipped the hotel's website and analytics.
@@ -112,6 +116,11 @@ SDK speaks the 2025-era protocol unless a server explicitly opts in, and the spe
 twelve-month deprecation window. Most of the coverage said otherwise.
 
 ---
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="profile-3d-contrib/profile-night-rainbow.svg">
+  <img src="profile-3d-contrib/profile-season-animate.svg" alt="3D contribution graph">
+</picture>
 
 ## Elsewhere
 
