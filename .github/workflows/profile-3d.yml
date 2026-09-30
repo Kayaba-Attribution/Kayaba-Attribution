@@ -17,6 +17,10 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           USERNAME: ${{ github.repository_owner }}
+      - name: Replace the radar with real stats (private repos included)
+        run: python3 .github/scripts/patch_3d.py
+        env:
+          STATS_TOKEN: ${{ secrets.STATS_TOKEN }}
       - name: Commit & Push
         run: |
           git config user.name github-actions
