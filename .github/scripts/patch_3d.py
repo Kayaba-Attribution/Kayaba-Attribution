@@ -1,40 +1,26 @@
 """Replace the radar chart in the 3D contribution SVGs with real stats.
 
 The radar only sees public activity, so private-repo reviews and PRs show as zero.
-With STATS_TOKEN (a token that can read the private repos) we draw merged PRs and
-reviews of merged PRs from GitHub search, for 12 months and 90 days. Without it we only remove the radar.
+scripts/publish_stats.py runs on my Mac with access to those repos and commits
+assets/devstats.json; this step draws its counts in the radar's place. Without the
+file we only remove the radar.
 """
-import glob, json, os, re, urllib.request
-from datetime import date, timedelta
+import glob, json, re
+from pathlib import Path
 import xml.etree.ElementTree as ET
 
 SVG = 'http://www.w3.org/2000/svg'
 ET.register_namespace('', SVG)
-USER = os.environ.get('GITHUB_REPOSITORY_OWNER', 'Kayaba-Attribution')
+STATS = Path('assets/devstats.json')
 TRANSLATE = re.compile(r'^translate\(([\d.]+), ([\d.]+)\)$')
 
 
-def stats(token):
-    """Merged PRs authored, and merged PRs reviewed for someone else, per window."""
-    to = date.today()
-    parts, variables = [], {}
-    for key, days in (('y', 365), ('q', 90)):
-        win = f'{to - timedelta(days=days)}..{to}'
-        variables[f'{key}m'] = f'is:pr is:merged author:{USER} merged:{win}'
-        variables[f'{key}r'] = f'is:pr is:merged reviewed-by:{USER} -author:{USER} merged:{win}'
-        parts += [f'{key}m:search(query:${key}m,type:ISSUE,first:1){{issueCount}}',
-                  f'{key}r:search(query:${key}r,type:ISSUE,first:1){{issueCount}}']
-    q = 'query(' + ','.join(f'${k}:String!' for k in variables) + '){' + ' '.join(parts) + '}'
-    req = urllib.request.Request('https://api.github.com/graphql',
-                                 json.dumps({'query': q, 'variables': variables}).encode(),
-                                 {'Authorization': f'bearer {token}', 'Content-Type': 'application/json'})
-    d = json.load(urllib.request.urlopen(req))['data']
-    if d['yr']['issueCount'] == 0 and d['ym']['issueCount'] > 0:
-        # merged work but zero reviews means the token can't read the private repos:
-        # fail so the commit step never replaces yesterday's chart with public-only counts
-        raise SystemExit('STATS_TOKEN cannot see private-repo reviews; keeping the previous chart')
-    return [('last 12 months', d['ym']['issueCount'], d['yr']['issueCount']),
-            ('last 90 days', d['qm']['issueCount'], d['qr']['issueCount'])]
+def stats():
+    if not STATS.exists():
+        return None
+    q = json.loads(STATS.read_text())['search']
+    return [('last 12 months', q['year']['merged'], q['year']['reviewed']),
+            ('last 90 days', q['quarter']['merged'], q['quarter']['reviewed'])]
 
 
 def patch(path, rows):
@@ -71,8 +57,7 @@ def patch(path, rows):
 
 
 if __name__ == '__main__':
-    token = os.environ.get('STATS_TOKEN')
-    rows = stats(token) if token else None
-    print('stats:', rows or 'no STATS_TOKEN, removing radar only')
+    rows = stats()
+    print('stats:', rows or f'no {STATS}, removing radar only')
     for f in sorted(glob.glob('profile-3d-contrib/*.svg')):
         print(f, 'patched' if patch(f, rows) else 'no radar found')

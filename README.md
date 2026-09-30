@@ -27,6 +27,8 @@ bugs I go looking for, because they are the ones that survive CI.
 AI for large US law firms: business-development signals, relationship data and CRM quality.
 **~400 merged PRs** across five services in under two years.
 
+<img src="assets/devstats.svg" alt="My rolling 90-day stats across the Postilize repos: lines added and deleted, PRs merged and reviewed, and where the lines went" width="820">
+
 - **Signals pipeline, idea to enterprise product.** Architect and owner of agentic prospecting over
   a multi-region news corpus: search, LLM classification and enrichment, dedup, delivery to
   lawyers. The V2 rebuild on FastAPI, Celery and Redis took it from **1 to 4 regions** while cutting
