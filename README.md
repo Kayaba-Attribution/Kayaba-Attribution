@@ -6,6 +6,9 @@ Production AI systems at scale during the day — [Postilize](https://www.postil
 was one of the first eight engineers. In the open: MCP tooling, Claude Code plugins, and upstream
 fixes to the agent stack.
 
+I take a rough idea to a product people depend on, and I own it end to end: the architecture, the
+code, the rollout, and the person using it on Monday morning. Nobody has to hand me a spec.
+
 The through-line is verification. A cheap model hands you a wrong answer in a confident sentence.
 A migration codemod leaves a green test suite sitting on top of a dead code path. A monkey-patch
 bound to a package instead of a module silently stops working and nothing fails. Those are the
@@ -59,15 +62,45 @@ twelve-month deprecation window. Most of the coverage said otherwise.
 
 ## Production
 
-**Postilize** — Senior Software Engineer, one of the first eight engineers · Mar 2025 – present
+**Postilize** — Senior Software Engineer, one of the first eight engineers · Nov 2024 – present
 
-Architect of the Signals pipeline: agentic prospecting over a multi-region news corpus, async
-infrastructure on FastAPI, Celery and Redis, and the LLM cost and throughput work underneath it.
-Also built the Signals MCP server and the outreach surfaces analysts use daily. Earlier, took the
-agentic outreach platform from prototype to production.
+AI for large US law firms: business-development signals, relationship data and CRM quality.
+~400 merged PRs across five services in under two years.
 
-<!-- Add back any scale/cost figures you can defend precisely, including the baseline and what else
-     changed at the same time. Numbers that wobble under questioning cost more than they earn. -->
+- **Signals pipeline, idea to enterprise product.** Architect and owner of agentic prospecting over
+  a multi-region news corpus: search, LLM classification and enrichment, dedup, delivery to
+  lawyers. The V2 rebuild on FastAPI, Celery and Redis took it from 70K to 280K articles a day and
+  from 1 to 4 regions while cutting LLM cost by about 90%. Coverage grew from a firm's top 100
+  companies to 500. Then I built the Signals MCP server on top.
+- **Typed AI decisions in production.** Put [Jev](https://typesafe.ai) decision gates into company
+  identity resolution: one narrow factual question per call, neutral candidate labels, evidence
+  fetched before judging, and an explicit "insufficient evidence" answer. The audit that started
+  it found about half the early decisions were low-confidence fallbacks cached as truth. The gate
+  now refuses instead of guessing.
+- **LLM-as-judge with a human in the loop.** An AI judge reviews suggested CRM changes in shadow
+  mode, with a review workbench and per-tenant rollout flags, before anything is auto-suppressed.
+- **Identity and data quality at scale.** Guards that stop email signatures, enrichment providers
+  and CRM syncs from writing the wrong person or company, plus dry-run-first repairs on live data.
+- **LLM cost and throughput.** Per-signal cost attribution, then re-tiering the model that
+  dominated the bill onto cheaper reasoning-off models.
+- **Agentic outreach.** Took the email-generation platform from a Streamlit prototype to a
+  production FastAPI service (CrewAI, then Autogen with Perplexity research), plus the outreach
+  surfaces analysts use daily.
+
+**Merakii Seaview Escape** — Forward-deployed engineer, boutique hotel in Curaçao · 2026 – present
+
+Embedded with the owner: learn how the hotel actually runs, then automate as much of it as
+possible on Cloudflare Workers.
+
+- **Owner's AI assistant.** A Cloudbeds MCP server, so bookings, arrivals and open rooms can be
+  queried in plain language, plus a 7am daily brief for the owner: arrivals, balances to chase, and a
+  14-day occupancy outlook with raise-or-promote calls.
+- **Pricing data from scratch.** Daily rate and booking rails running unattended, a 3-year pricing
+  log backfilled (10,202 price changes), and a replay harness over 131K pricing decisions that
+  reproduces the current revenue manager exactly: the baseline any new pricing policy must beat.
+- **Menu from real demand.** 20 months of POS data (4,780 bills) showed the best sellers were
+  missing from the printed menu. That analysis shaped the new menu and its pricing.
+- Also shipped the hotel's website and analytics.
 
 **Forta Foundation** — Blockchain security · 2023 – 2024
 
