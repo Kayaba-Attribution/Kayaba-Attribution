@@ -44,7 +44,7 @@ svg = [f'<svg xmlns="http://www.w3.org/2000/svg" width="{W}" height="{H}" viewBo
 '<style>text{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,"Liberation Mono",monospace;font-size:14px;white-space:pre}.b{font-size:14px;fill:url(#g)}</style>',
 f'<rect width="{W}" height="{H}" rx="10" fill="#0d1117" stroke="#30363d"/>',
 '<circle cx="22" cy="20" r="6" fill="#ff5f56"/><circle cx="42" cy="20" r="6" fill="#ffbd2e"/><circle cx="62" cy="20" r="6" fill="#27c93f"/>',
-f'<text x="{W/2}" y="25" text-anchor="middle" fill="#6e7681" style="font-size:12px">kayaba-attribution — zsh</text>',
+f'<text x="{W/2}" y="25" text-anchor="middle" fill="#6e7681" style="font-size:12px">juan-david — zsh</text>',
 ]
 for i, line in enumerate(banner):
     y = BANNER_Y + i * 16

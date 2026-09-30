@@ -1,6 +1,6 @@
 # Juan David Gomez
 
-**I build agentic dev tooling, and I verify what agents claim.**
+**I build production AI systems end to end, and I verify what the models claim.**
 
 <p align="center">
   <img src="assets/terminal.svg" alt="Animated terminal: a production signals run narrowing 1.3M search results to 14,255 signals, then a Jev decision refusing to guess" width="820">
@@ -121,6 +121,8 @@ twelve-month deprecation window. Most of the coverage said otherwise.
   <source media="(prefers-color-scheme: dark)" srcset="profile-3d-contrib/profile-night-rainbow.svg">
   <img src="profile-3d-contrib/profile-season-animate.svg" alt="3D contribution graph">
 </picture>
+
+<sub>Most of my work lives in private repos, so the chart above can't count it. From GitHub search, Sep 2025 to Sep 2026: <b>290 PRs merged</b> and <b>418 PRs reviewed</b> for teammates.</sub>
 
 ## Elsewhere
 
