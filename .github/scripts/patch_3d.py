@@ -29,6 +29,10 @@ def stats(token):
                                  json.dumps({'query': q, 'variables': variables}).encode(),
                                  {'Authorization': f'bearer {token}', 'Content-Type': 'application/json'})
     d = json.load(urllib.request.urlopen(req))['data']
+    if d['yr']['issueCount'] == 0 and d['ym']['issueCount'] > 0:
+        # merged work but zero reviews means the token can't read the private repos:
+        # fail so the commit step never replaces yesterday's chart with public-only counts
+        raise SystemExit('STATS_TOKEN cannot see private-repo reviews; keeping the previous chart')
     return [('last 12 months', d['ym']['issueCount'], d['yr']['issueCount']),
             ('last 90 days', d['qm']['issueCount'], d['qr']['issueCount'])]
 
