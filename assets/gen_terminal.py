@@ -3,19 +3,21 @@ from xml.sax.saxutils import escape
 STATIC = '--static' in sys.argv
 out = sys.argv[1]
 
-banner = [l for l in pyfiglet.figlet_format('KAYABA', font='ansi_shadow').splitlines() if l.strip()]
+banner = [l for l in pyfiglet.figlet_format('JUAN DAVID', font='ansi_shadow').splitlines() if l.strip()]
 # (kind, text, type_seconds, pause_after)
 script = [
-    ('cmd', 'signals run --env prod --date 2026-09-29', 1.6, 0.4),
-    ('out', '  22,654 companies searched · 1,304,965 results', 0, 0.25),
-    ('out', '  → prefilter    952,178', 0, 0.15),
+    ('cmd', 'signals run --env prod', 1.0, 0.4),
+    ('out', '  22,654 companies searched · 1,304,965 results', 0, 0.3),
+    ('out', '  → prefilter    952,178   # bye, press releases about press releases', 0, 0.35),
     ('out', '  → classified    20,017', 0, 0.15),
-    ('out', '  → validated     16,579', 0, 0.15),
-    ('ok',  '  ✓ emitted       14,255 signals', 0, 0.9),
-    ('cmd', 'jev ask "does acme.io belong to Acme Corp?"', 1.7, 0.5),
-    ('warn','  → insufficient_evidence   refusing, not guessing', 0, 0.9),
+    ('out', '  → validated     16,579   # trust, but verify. then verify again', 0, 0.35),
+    ('ok',  '  ✓ emitted       14,255 signals   # lawyers have homework now', 0, 1.1),
+    ('cmd', 'jev ask "does acme.io belong to Acme Corp?"', 1.6, 0.5),
+    ('warn','  → insufficient_evidence   # confidently unsure > confidently wrong', 0, 1.1),
+    ('cmd', 'git blame signals/', 0.8, 0.4),
+    ('out', '  mostly me. yes, including the good parts.', 0, 1.0),
     ('cmd', 'whoami', 0.5, 0.3),
-    ('out', '  idea → enterprise product. owns it end to end.', 0, 3.5),
+    ('ok',  '  turns "wouldn\'t it be cool if…" into prod. then stays for the pager.', 0, 4.0),
 ]
 CW, FS, LH = 8.43, 14, 21
 X0, BANNER_Y = 24, 62
