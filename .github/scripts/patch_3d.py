@@ -2,7 +2,7 @@
 
 The radar only sees public activity, so private-repo reviews and PRs show as zero.
 With STATS_TOKEN (a token that can read the private repos) we draw merged PRs and
-reviews from GitHub search instead. Without it we only remove the radar.
+reviews of merged PRs from GitHub search, for 12 months and 90 days. Without it we only remove the radar.
 """
 import glob, json, os, re, urllib.request
 from datetime import date, timedelta
@@ -15,18 +15,22 @@ TRANSLATE = re.compile(r'^translate\(([\d.]+), ([\d.]+)\)$')
 
 
 def stats(token):
+    """Merged PRs authored, and merged PRs reviewed for someone else, per window."""
     to = date.today()
-    win = f'{to - timedelta(days=365)}..{to}'
-    q = '''query($merged:String!,$reviewed:String!){
-      merged:search(query:$merged,type:ISSUE,first:1){issueCount}
-      reviewed:search(query:$reviewed,type:ISSUE,first:1){issueCount}}'''
-    body = json.dumps({'query': q, 'variables': {
-        'merged': f'is:pr is:merged author:{USER} merged:{win}',
-        'reviewed': f'is:pr reviewed-by:{USER} -author:{USER} created:{win}'}}).encode()
-    req = urllib.request.Request('https://api.github.com/graphql', body,
+    parts, variables = [], {}
+    for key, days in (('y', 365), ('q', 90)):
+        win = f'{to - timedelta(days=days)}..{to}'
+        variables[f'{key}m'] = f'is:pr is:merged author:{USER} merged:{win}'
+        variables[f'{key}r'] = f'is:pr is:merged reviewed-by:{USER} -author:{USER} merged:{win}'
+        parts += [f'{key}m:search(query:${key}m,type:ISSUE,first:1){{issueCount}}',
+                  f'{key}r:search(query:${key}r,type:ISSUE,first:1){{issueCount}}']
+    q = 'query(' + ','.join(f'${k}:String!' for k in variables) + '){' + ' '.join(parts) + '}'
+    req = urllib.request.Request('https://api.github.com/graphql',
+                                 json.dumps({'query': q, 'variables': variables}).encode(),
                                  {'Authorization': f'bearer {token}', 'Content-Type': 'application/json'})
     d = json.load(urllib.request.urlopen(req))['data']
-    return [(d['merged']['issueCount'], 'PRs merged'), (d['reviewed']['issueCount'], 'PRs reviewed')]
+    return [('last 12 months', d['ym']['issueCount'], d['yr']['issueCount']),
+            ('last 90 days', d['qm']['issueCount'], d['qr']['issueCount'])]
 
 
 def patch(path, rows):
@@ -45,15 +49,19 @@ def patch(path, rows):
         texts = list(root.iter(f'{{{SVG}}}text'))
         strong = next((t.get('fill') for t in texts if 'font-weight: bold' in (t.get('style') or '')), '#ffc837')
         fg = next((t.get('fill') for t in texts if (t.text or '').strip() == 'contributions'), '#eeeeff')
-        g = ET.SubElement(parent, f'{{{SVG}}}g', transform=f'translate({x} {y - 60})')
+        g = ET.SubElement(parent, f'{{{SVG}}}g', transform=f'translate({x} {y - 90})')
         ET.SubElement(g, f'{{{SVG}}}text', {'text-anchor': 'middle', 'fill': fg,
-                      'style': 'font-size: 18px; opacity: 0.7;'}).text = 'last 12 months, private repos included'
-        for i, (n, label) in enumerate(rows):
-            ty = str(62 + i * 62)
-            ET.SubElement(g, f'{{{SVG}}}text', {'x': '-10', 'y': ty, 'text-anchor': 'end', 'fill': strong,
-                          'style': 'font-size: 44px; font-weight: bold;'}).text = f'{n:,}'
-            ET.SubElement(g, f'{{{SVG}}}text', {'x': '4', 'y': ty, 'text-anchor': 'start', 'fill': fg,
-                          'style': 'font-size: 24px;'}).text = label
+                      'style': 'font-size: 16px; opacity: 0.7;'}).text = 'private repos included'
+        for i, (window, merged, reviewed) in enumerate(rows):
+            top = 44 + i * 130
+            ET.SubElement(g, f'{{{SVG}}}text', {'y': str(top), 'text-anchor': 'middle', 'fill': fg,
+                          'style': 'font-size: 20px; font-weight: bold;'}).text = window
+            for j, (n, label) in enumerate(((merged, 'PRs merged'), (reviewed, 'PRs reviewed'))):
+                ty = str(top + 44 + j * 44)
+                ET.SubElement(g, f'{{{SVG}}}text', {'x': '-10', 'y': ty, 'text-anchor': 'end', 'fill': strong,
+                              'style': 'font-size: 36px; font-weight: bold;'}).text = f'{n:,}'
+                ET.SubElement(g, f'{{{SVG}}}text', {'x': '4', 'y': ty, 'text-anchor': 'start', 'fill': fg,
+                              'style': 'font-size: 22px;'}).text = label
     tree.write(path, encoding='utf-8')
     return True
 
