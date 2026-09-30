@@ -122,7 +122,7 @@ twelve-month deprecation window. Most of the coverage said otherwise.
   <img src="profile-3d-contrib/profile-season-animate.svg" alt="3D contribution graph">
 </picture>
 
-<sub>Most of my work lives in private repos, so the chart above can't count it. From GitHub search, Sep 2025 to Sep 2026: <b>290 PRs merged</b> and <b>418 PRs reviewed</b> for teammates.</sub>
+<sub>Most of my work lives in private repos, so the chart above can't count it. From GitHub search, Sep 2025 to Sep 2026: <b>290 PRs merged</b> and <b>370 PRs reviewed</b> for teammates.</sub>
 
 ## Elsewhere
 
