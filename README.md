@@ -69,9 +69,10 @@ AI for large US law firms: business-development signals, relationship data and C
 
 - **Signals pipeline, idea to enterprise product.** Architect and owner of agentic prospecting over
   a multi-region news corpus: search, LLM classification and enrichment, dedup, delivery to
-  lawyers. The V2 rebuild on FastAPI, Celery and Redis took it from 70K to 280K articles a day and
-  from 1 to 4 regions while cutting LLM cost by about 90%. Coverage grew from a firm's top 100
-  companies to 500. Then I built the Signals MCP server on top.
+  lawyers. The V2 rebuild on FastAPI, Celery and Redis took it from 1 to 4 regions while cutting
+  LLM cost by about 90%. Today the main production run searches ~22,600 companies a day and
+  narrows ~1.3M search results to 5K–14K signals, with zero failed jobs. Then I built the Signals
+  MCP server on top.
 - **Typed AI decisions in production.** Put [Jev](https://typesafe.ai) decision gates into company
   identity resolution: one narrow factual question per call, neutral candidate labels, evidence
   fetched before judging, and an explicit "insufficient evidence" answer. The audit that started
