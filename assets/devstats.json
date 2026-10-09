@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-08",
+  "updated": "2026-10-09",
   "days": 90,
   "devstats": {
     "add": 177718,
@@ -12,15 +12,15 @@
     "hunks": 4179,
     "prs": 119,
     "reviews": 150,
-    "repos": 16
+    "repos": 15
   },
   "search": {
     "year": {
-      "merged": 300,
-      "reviewed": 375
+      "merged": 299,
+      "reviewed": 377
     },
     "quarter": {
-      "merged": 134,
+      "merged": 133,
       "reviewed": 152
     }
   }
