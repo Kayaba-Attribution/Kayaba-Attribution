@@ -1,27 +1,27 @@
 {
-  "updated": "2026-10-15",
+  "updated": "2026-10-16",
   "days": 90,
   "devstats": {
-    "add": 164539,
-    "del": 5608,
+    "add": 164529,
+    "del": 5605,
     "src": 31,
     "migr": 35,
     "test": 32,
     "fix": 2,
     "doc": 0,
-    "hunks": 3803,
-    "prs": 107,
-    "reviews": 153,
+    "hunks": 3799,
+    "prs": 106,
+    "reviews": 155,
     "repos": 15
   },
   "search": {
     "year": {
-      "merged": 319,
-      "reviewed": 385
+      "merged": 320,
+      "reviewed": 387
     },
     "quarter": {
       "merged": 142,
-      "reviewed": 155
+      "reviewed": 157
     }
   }
 }
